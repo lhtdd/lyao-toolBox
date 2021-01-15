@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.ExitTdDetailDOMapper">
+  <resultMap id="BaseResultMap" type="com.lyao.bean.ExitTdDetailDO">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="tdId" jdbcType="BIGINT" property="tdId" />
+    <result column="txId" jdbcType="VARCHAR" property="txId" />
+    <result column="serProvinceId" jdbcType="VARCHAR" property="serProvinceId" />
+    <result column="tollFee" jdbcType="DECIMAL" property="tollFee" />
+    <result column="enPointId" jdbcType="VARCHAR" property="enPointId" />
+    <result column="exPointId" jdbcType="VARCHAR" property="exPointId" />
+    <result column="enTollStationName" jdbcType="VARCHAR" property="enTollStationName" />
+    <result column="exTollStationName" jdbcType="VARCHAR" property="exTollStationName" />
+    <result column="enTime" jdbcType="TIMESTAMP" property="enTime" />
+    <result column="exTime" jdbcType="TIMESTAMP" property="exTime" />
+    <result column="tollIntervals" jdbcType="VARCHAR" property="tollIntervals" />
+    <result column="tollIntervalChargefee" jdbcType="VARCHAR" property="tollIntervalChargefee" />
+    <result column="tollIntervalPayFee" jdbcType="VARCHAR" property="tollIntervalPayFee" />
+    <result column="tollIntervalDiscountFee" jdbcType="VARCHAR" property="tollIntervalDiscountFee" />
+    <result column="tollIntervalRateVersion" jdbcType="VARCHAR" property="tollIntervalRateVersion" />
+    <result column="is_deleted" jdbcType="BIT" property="is_deleted" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmt_create" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmt_modified" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_yd_exit_td_detail
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lyao.bean.ExitTdDetailDO">
+    insert into t_yd_exit_td_detail (id, tdId, txId, 
+      serProvinceId, tollFee, enPointId, 
+      exPointId, enTollStationName, exTollStationName, 
+      enTime, exTime, tollIntervals, 
+      tollIntervalChargefee, tollIntervalPayFee, 
+      tollIntervalDiscountFee, tollIntervalRateVersion, 
+      is_deleted, gmt_create, gmt_modified, 
+      remark)
+    values (#{id,jdbcType=BIGINT}, #{tdId,jdbcType=BIGINT}, #{txId,jdbcType=VARCHAR}, 
+      #{serProvinceId,jdbcType=VARCHAR}, #{tollFee,jdbcType=DECIMAL}, #{enPointId,jdbcType=VARCHAR}, 
+      #{exPointId,jdbcType=VARCHAR}, #{enTollStationName,jdbcType=VARCHAR}, #{exTollStationName,jdbcType=VARCHAR}, 
+      #{enTime,jdbcType=TIMESTAMP}, #{exTime,jdbcType=TIMESTAMP}, #{tollIntervals,jdbcType=VARCHAR}, 
+      #{tollIntervalChargefee,jdbcType=VARCHAR}, #{tollIntervalPayFee,jdbcType=VARCHAR}, 
+      #{tollIntervalDiscountFee,jdbcType=VARCHAR}, #{tollIntervalRateVersion,jdbcType=VARCHAR}, 
+      #{is_deleted,jdbcType=BIT}, #{gmt_create,jdbcType=TIMESTAMP}, #{gmt_modified,jdbcType=TIMESTAMP}, 
+      #{remark,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.lyao.bean.ExitTdDetailDO">
+    update t_yd_exit_td_detail
+    set tdId = #{tdId,jdbcType=BIGINT},
+      txId = #{txId,jdbcType=VARCHAR},
+      serProvinceId = #{serProvinceId,jdbcType=VARCHAR},
+      tollFee = #{tollFee,jdbcType=DECIMAL},
+      enPointId = #{enPointId,jdbcType=VARCHAR},
+      exPointId = #{exPointId,jdbcType=VARCHAR},
+      enTollStationName = #{enTollStationName,jdbcType=VARCHAR},
+      exTollStationName = #{exTollStationName,jdbcType=VARCHAR},
+      enTime = #{enTime,jdbcType=TIMESTAMP},
+      exTime = #{exTime,jdbcType=TIMESTAMP},
+      tollIntervals = #{tollIntervals,jdbcType=VARCHAR},
+      tollIntervalChargefee = #{tollIntervalChargefee,jdbcType=VARCHAR},
+      tollIntervalPayFee = #{tollIntervalPayFee,jdbcType=VARCHAR},
+      tollIntervalDiscountFee = #{tollIntervalDiscountFee,jdbcType=VARCHAR},
+      tollIntervalRateVersion = #{tollIntervalRateVersion,jdbcType=VARCHAR},
+      is_deleted = #{is_deleted,jdbcType=BIT},
+      gmt_create = #{gmt_create,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmt_modified,jdbcType=TIMESTAMP},
+      remark = #{remark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, tdId, txId, serProvinceId, tollFee, enPointId, exPointId, enTollStationName, 
+    exTollStationName, enTime, exTime, tollIntervals, tollIntervalChargefee, tollIntervalPayFee, 
+    tollIntervalDiscountFee, tollIntervalRateVersion, is_deleted, gmt_create, gmt_modified, 
+    remark
+    from t_yd_exit_td_detail
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, tdId, txId, serProvinceId, tollFee, enPointId, exPointId, enTollStationName, 
+    exTollStationName, enTime, exTime, tollIntervals, tollIntervalChargefee, tollIntervalPayFee, 
+    tollIntervalDiscountFee, tollIntervalRateVersion, is_deleted, gmt_create, gmt_modified, 
+    remark
+    from t_yd_exit_td_detail
+  </select>
+  <resultMap id="BaseResultMap" type="com.lyao.bean.ExitTdDetailDO">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="tdId" jdbcType="BIGINT" property="tdId" />
+    <result column="txId" jdbcType="VARCHAR" property="txId" />
+    <result column="serProvinceId" jdbcType="VARCHAR" property="serProvinceId" />
+    <result column="tollFee" jdbcType="DECIMAL" property="tollFee" />
+    <result column="is_deleted" jdbcType="BIT" property="is_deleted" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmt_create" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmt_modified" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_yd_exit_td_detail
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lyao.bean.ExitTdDetailDO">
+    insert into t_yd_exit_td_detail (id, tdId, txId, 
+      serProvinceId, tollFee, is_deleted, 
+      gmt_create, gmt_modified, remark
+      )
+    values (#{id,jdbcType=BIGINT}, #{tdId,jdbcType=BIGINT}, #{txId,jdbcType=VARCHAR}, 
+      #{serProvinceId,jdbcType=VARCHAR}, #{tollFee,jdbcType=DECIMAL}, #{is_deleted,jdbcType=BIT}, 
+      #{gmt_create,jdbcType=TIMESTAMP}, #{gmt_modified,jdbcType=TIMESTAMP}, #{remark,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.lyao.bean.ExitTdDetailDO">
+    update t_yd_exit_td_detail
+    set tdId = #{tdId,jdbcType=BIGINT},
+      txId = #{txId,jdbcType=VARCHAR},
+      serProvinceId = #{serProvinceId,jdbcType=VARCHAR},
+      tollFee = #{tollFee,jdbcType=DECIMAL},
+      is_deleted = #{is_deleted,jdbcType=BIT},
+      gmt_create = #{gmt_create,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmt_modified,jdbcType=TIMESTAMP},
+      remark = #{remark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, tdId, txId, serProvinceId, tollFee, is_deleted, gmt_create, gmt_modified, 
+    remark
+    from t_yd_exit_td_detail
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, tdId, txId, serProvinceId, tollFee, is_deleted, gmt_create, gmt_modified, 
+    remark
+    from t_yd_exit_td_detail
+  </select>
+</mapper>

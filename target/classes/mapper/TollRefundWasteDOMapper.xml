@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.TollRefundWasteDOMapper">
+  <resultMap id="BaseResultMap" type="com.lyao.bean.TollRefundWasteDO">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="openId" jdbcType="VARCHAR" property="openId" />
+    <result column="refundId" jdbcType="VARCHAR" property="refundId" />
+    <result column="tollId" jdbcType="INTEGER" property="tollId" />
+    <result column="payId" jdbcType="VARCHAR" property="payId" />
+    <result column="refundFee" jdbcType="INTEGER" property="refundFee" />
+    <result column="is_deleted" jdbcType="BIT" property="is_deleted" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmt_create" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmt_modified" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_opetc_tollrefund
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.lyao.bean.TollRefundWasteDO">
+    insert into t_opetc_tollrefund (id, openId, refundId, 
+      tollId, payId, refundFee, 
+      is_deleted, gmt_create, gmt_modified, 
+      remark)
+    values (#{id,jdbcType=INTEGER}, #{openId,jdbcType=VARCHAR}, #{refundId,jdbcType=VARCHAR}, 
+      #{tollId,jdbcType=INTEGER}, #{payId,jdbcType=VARCHAR}, #{refundFee,jdbcType=INTEGER}, 
+      #{is_deleted,jdbcType=BIT}, #{gmt_create,jdbcType=TIMESTAMP}, #{gmt_modified,jdbcType=TIMESTAMP}, 
+      #{remark,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.lyao.bean.TollRefundWasteDO">
+    update t_opetc_tollrefund
+    set openId = #{openId,jdbcType=VARCHAR},
+      refundId = #{refundId,jdbcType=VARCHAR},
+      tollId = #{tollId,jdbcType=INTEGER},
+      payId = #{payId,jdbcType=VARCHAR},
+      refundFee = #{refundFee,jdbcType=INTEGER},
+      is_deleted = #{is_deleted,jdbcType=BIT},
+      gmt_create = #{gmt_create,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmt_modified,jdbcType=TIMESTAMP},
+      remark = #{remark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, openId, refundId, tollId, payId, refundFee, is_deleted, gmt_create, gmt_modified, 
+    remark
+    from t_opetc_tollrefund
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, openId, refundId, tollId, payId, refundFee, is_deleted, gmt_create, gmt_modified, 
+    remark
+    from t_opetc_tollrefund
+  </select>
+</mapper>

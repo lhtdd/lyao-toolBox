@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.OpetcNoticeDOMapper">
+  <resultMap id="BaseResultMap" type="com.lyao.bean.OpetcNoticeDO">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="orderId" jdbcType="INTEGER" property="orderId" />
+    <result column="cardNo" jdbcType="VARCHAR" property="cardNo" />
+    <result column="obuId" jdbcType="VARCHAR" property="obuId" />
+    <result column="noticeResult" jdbcType="TINYINT" property="noticeResult" />
+    <result column="is_deleted" jdbcType="BIT" property="is_deleted" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmt_create" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmt_modified" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_opetc_notice
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.lyao.bean.OpetcNoticeDO">
+    insert into t_opetc_notice (id, orderId, cardNo, 
+      obuId, noticeResult, is_deleted, 
+      gmt_create, gmt_modified, remark
+      )
+    values (#{id,jdbcType=INTEGER}, #{orderId,jdbcType=INTEGER}, #{cardNo,jdbcType=VARCHAR}, 
+      #{obuId,jdbcType=VARCHAR}, #{noticeResult,jdbcType=TINYINT}, #{is_deleted,jdbcType=BIT}, 
+      #{gmt_create,jdbcType=TIMESTAMP}, #{gmt_modified,jdbcType=TIMESTAMP}, #{remark,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.lyao.bean.OpetcNoticeDO">
+    update t_opetc_notice
+    set orderId = #{orderId,jdbcType=INTEGER},
+      cardNo = #{cardNo,jdbcType=VARCHAR},
+      obuId = #{obuId,jdbcType=VARCHAR},
+      noticeResult = #{noticeResult,jdbcType=TINYINT},
+      is_deleted = #{is_deleted,jdbcType=BIT},
+      gmt_create = #{gmt_create,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmt_modified,jdbcType=TIMESTAMP},
+      remark = #{remark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, orderId, cardNo, obuId, noticeResult, is_deleted, gmt_create, gmt_modified, 
+    remark
+    from t_opetc_notice
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, orderId, cardNo, obuId, noticeResult, is_deleted, gmt_create, gmt_modified, 
+    remark
+    from t_opetc_notice
+  </select>
+</mapper>

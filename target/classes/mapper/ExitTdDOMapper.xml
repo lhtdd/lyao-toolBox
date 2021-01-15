@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.ExitTdDOMapper">
+  <resultMap id="BaseResultMap" type="com.lyao.bean.ExitTdDO">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="txId" jdbcType="VARCHAR" property="txId" />
+    <result column="mediaType" jdbcType="TINYINT" property="mediaType" />
+    <result column="mediaNo" jdbcType="VARCHAR" property="mediaNo" />
+    <result column="transPayType" jdbcType="TINYINT" property="transPayType" />
+    <result column="tollProvinceId" jdbcType="VARCHAR" property="tollProvinceId" />
+    <result column="issuerId" jdbcType="VARCHAR" property="issuerId" />
+    <result column="obuSign" jdbcType="TINYINT" property="obuSign" />
+    <result column="identification" jdbcType="TINYINT" property="identification" />
+    <result column="terminalTransNo" jdbcType="VARCHAR" property="terminalTransNo" />
+    <result column="cardId" jdbcType="VARCHAR" property="cardId" />
+    <result column="etcCardType" jdbcType="TINYINT" property="etcCardType" />
+    <result column="exTime" jdbcType="TIMESTAMP" property="exTime" />
+    <result column="vehicleId" jdbcType="VARCHAR" property="vehicleId" />
+    <result column="identifyVehicleId" jdbcType="VARCHAR" property="identifyVehicleId" />
+    <result column="vehicleSignId" jdbcType="VARCHAR" property="vehicleSignId" />
+    <result column="vehicleType" jdbcType="TINYINT" property="vehicleType" />
+    <result column="vehicleClass" jdbcType="TINYINT" property="vehicleClass" />
+    <result column="TAC" jdbcType="VARCHAR" property="TAC" />
+    <result column="transFee" jdbcType="DECIMAL" property="transFee" />
+    <result column="transType" jdbcType="VARCHAR" property="transType" />
+    <result column="terminalNo" jdbcType="VARCHAR" property="terminalNo" />
+    <result column="preBalance" jdbcType="DECIMAL" property="preBalance" />
+    <result column="postBalance" jdbcType="DECIMAL" property="postBalance" />
+    <result column="exWeight" jdbcType="SMALLINT" property="exWeight" />
+    <result column="axleCount" jdbcType="TINYINT" property="axleCount" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="specialType" jdbcType="VARCHAR" property="specialType" />
+    <result column="enTollLaneId" jdbcType="VARCHAR" property="enTollLaneId" />
+    <result column="enTollLaneHex" jdbcType="VARCHAR" property="enTollLaneHex" />
+    <result column="enTime" jdbcType="TIMESTAMP" property="enTime" />
+    <result column="enWeight" jdbcType="SMALLINT" property="enWeight" />
+    <result column="enAxleCount" jdbcType="TINYINT" property="enAxleCount" />
+    <result column="enTollStationName" jdbcType="VARCHAR" property="enTollStationName" />
+    <result column="exTollStationName" jdbcType="VARCHAR" property="exTollStationName" />
+    <result column="exTollLaneId" jdbcType="VARCHAR" property="exTollLaneId" />
+    <result column="passId" jdbcType="VARCHAR" property="passId" />
+    <result column="vehicleSign" jdbcType="VARCHAR" property="vehicleSign" />
+    <result column="payFee" jdbcType="DECIMAL" property="payFee" />
+    <result column="fee" jdbcType="DECIMAL" property="fee" />
+    <result column="discountFee" jdbcType="DECIMAL" property="discountFee" />
+    <result column="noCardCount" jdbcType="SMALLINT" property="noCardCount" />
+    <result column="feeMileage" jdbcType="INTEGER" property="feeMileage" />
+    <result column="shortFee" jdbcType="DECIMAL" property="shortFee" />
+    <result column="shortFeeMileage" jdbcType="INTEGER" property="shortFeeMileage" />
+    <result column="feeRate" jdbcType="DECIMAL" property="feeRate" />
+    <result column="exitFeeType" jdbcType="TINYINT" property="exitFeeType" />
+    <result column="spcRateVersion" jdbcType="VARCHAR" property="spcRateVersion" />
+    <result column="cardTotalAmount" jdbcType="DECIMAL" property="cardTotalAmount" />
+    <result column="obuTotalAmount" jdbcType="DECIMAL" property="obuTotalAmount" />
+    <result column="obuTotalDisCountAmount" jdbcType="DECIMAL" property="obuTotalDisCountAmount" />
+    <result column="obuProvinceFee" jdbcType="DECIMAL" property="obuProvinceFee" />
+    <result column="totalCount" jdbcType="SMALLINT" property="totalCount" />
+    <result column="provTransCount" jdbcType="SMALLINT" property="provTransCount" />
+    <result column="provinceCount" jdbcType="SMALLINT" property="provinceCount" />
+    <result column="discountType" jdbcType="TINYINT" property="discountType" />
+    <result column="provinceDiscountFee" jdbcType="DECIMAL" property="provinceDiscountFee" />
+    <result column="originFee" jdbcType="DECIMAL" property="originFee" />
+    <result column="accountStatus" jdbcType="TINYINT" property="accountStatus" />
+    <result column="accountTime" jdbcType="TIMESTAMP" property="accountTime" />
+    <result column="result" jdbcType="TINYINT" property="result" />
+    <result column="resultDetail" jdbcType="VARCHAR" property="resultDetail" />
+    <result column="uploadStatus" jdbcType="TINYINT" property="uploadStatus" />
+    <result column="refundstate" jdbcType="SMALLINT" property="refundstate" />
+    <result column="refundtime" jdbcType="TIMESTAMP" property="refundtime" />
+    <result column="refundcardno" jdbcType="VARCHAR" property="refundcardno" />
+    <result column="refundacctname" jdbcType="VARCHAR" property="refundacctname" />
+    <result column="refundcardtype" jdbcType="SMALLINT" property="refundcardtype" />
+    <result column="refundtype" jdbcType="SMALLINT" property="refundtype" />
+    <result column="refundfailnum" jdbcType="INTEGER" property="refundfailnum" />
+    <result column="refundbatchid" jdbcType="VARCHAR" property="refundbatchid" />
+    <result column="channel" jdbcType="VARCHAR" property="channel" />
+    <result column="chargebackid" jdbcType="INTEGER" property="chargebackid" />
+    <result column="daikoufee" jdbcType="DECIMAL" property="daikoufee" />
+    <result column="daikoutype" jdbcType="VARCHAR" property="daikoutype" />
+    <result column="refundfailreason" jdbcType="VARCHAR" property="refundfailreason" />
+    <result column="is_deleted" jdbcType="BIT" property="is_deleted" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmt_create" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmt_modified" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_yd_exit_td
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lyao.bean.ExitTdDO">
+    insert into t_yd_exit_td (id, txId, mediaType, 
+      mediaNo, transPayType, tollProvinceId, 
+      issuerId, obuSign, identification, 
+      terminalTransNo, cardId, etcCardType, 
+      exTime, vehicleId, identifyVehicleId, 
+      vehicleSignId, vehicleType, vehicleClass, 
+      TAC, transFee, transType, 
+      terminalNo, preBalance, postBalance, 
+      exWeight, axleCount, description, 
+      specialType, enTollLaneId, enTollLaneHex, 
+      enTime, enWeight, enAxleCount, 
+      enTollStationName, exTollStationName, exTollLaneId, 
+      passId, vehicleSign, payFee, 
+      fee, discountFee, noCardCount, 
+      feeMileage, shortFee, shortFeeMileage, 
+      feeRate, exitFeeType, spcRateVersion, 
+      cardTotalAmount, obuTotalAmount, obuTotalDisCountAmount, 
+      obuProvinceFee, totalCount, provTransCount, 
+      provinceCount, discountType, provinceDiscountFee, 
+      originFee, accountStatus, accountTime, 
+      result, resultDetail, uploadStatus, 
+      refundstate, refundtime, refundcardno, 
+      refundacctname, refundcardtype, refundtype, 
+      refundfailnum, refundbatchid, channel, 
+      chargebackid, daikoufee, daikoutype, 
+      refundfailreason, is_deleted, gmt_create, 
+      gmt_modified, remark)
+    values (#{id,jdbcType=BIGINT}, #{txId,jdbcType=VARCHAR}, #{mediaType,jdbcType=TINYINT}, 
+      #{mediaNo,jdbcType=VARCHAR}, #{transPayType,jdbcType=TINYINT}, #{tollProvinceId,jdbcType=VARCHAR}, 
+      #{issuerId,jdbcType=VARCHAR}, #{obuSign,jdbcType=TINYINT}, #{identification,jdbcType=TINYINT}, 
+      #{terminalTransNo,jdbcType=VARCHAR}, #{cardId,jdbcType=VARCHAR}, #{etcCardType,jdbcType=TINYINT}, 
+      #{exTime,jdbcType=TIMESTAMP}, #{vehicleId,jdbcType=VARCHAR}, #{identifyVehicleId,jdbcType=VARCHAR}, 
+      #{vehicleSignId,jdbcType=VARCHAR}, #{vehicleType,jdbcType=TINYINT}, #{vehicleClass,jdbcType=TINYINT}, 
+      #{TAC,jdbcType=VARCHAR}, #{transFee,jdbcType=DECIMAL}, #{transType,jdbcType=VARCHAR}, 
+      #{terminalNo,jdbcType=VARCHAR}, #{preBalance,jdbcType=DECIMAL}, #{postBalance,jdbcType=DECIMAL}, 
+      #{exWeight,jdbcType=SMALLINT}, #{axleCount,jdbcType=TINYINT}, #{description,jdbcType=VARCHAR}, 
+      #{specialType,jdbcType=VARCHAR}, #{enTollLaneId,jdbcType=VARCHAR}, #{enTollLaneHex,jdbcType=VARCHAR}, 
+      #{enTime,jdbcType=TIMESTAMP}, #{enWeight,jdbcType=SMALLINT}, #{enAxleCount,jdbcType=TINYINT}, 
+      #{enTollStationName,jdbcType=VARCHAR}, #{exTollStationName,jdbcType=VARCHAR}, #{exTollLaneId,jdbcType=VARCHAR}, 
+      #{passId,jdbcType=VARCHAR}, #{vehicleSign,jdbcType=VARCHAR}, #{payFee,jdbcType=DECIMAL}, 
+      #{fee,jdbcType=DECIMAL}, #{discountFee,jdbcType=DECIMAL}, #{noCardCount,jdbcType=SMALLINT}, 
+      #{feeMileage,jdbcType=INTEGER}, #{shortFee,jdbcType=DECIMAL}, #{shortFeeMileage,jdbcType=INTEGER}, 
+      #{feeRate,jdbcType=DECIMAL}, #{exitFeeType,jdbcType=TINYINT}, #{spcRateVersion,jdbcType=VARCHAR}, 
+      #{cardTotalAmount,jdbcType=DECIMAL}, #{obuTotalAmount,jdbcType=DECIMAL}, #{obuTotalDisCountAmount,jdbcType=DECIMAL}, 
+      #{obuProvinceFee,jdbcType=DECIMAL}, #{totalCount,jdbcType=SMALLINT}, #{provTransCount,jdbcType=SMALLINT}, 
+      #{provinceCount,jdbcType=SMALLINT}, #{discountType,jdbcType=TINYINT}, #{provinceDiscountFee,jdbcType=DECIMAL}, 
+      #{originFee,jdbcType=DECIMAL}, #{accountStatus,jdbcType=TINYINT}, #{accountTime,jdbcType=TIMESTAMP}, 
+      #{result,jdbcType=TINYINT}, #{resultDetail,jdbcType=VARCHAR}, #{uploadStatus,jdbcType=TINYINT}, 
+      #{refundstate,jdbcType=SMALLINT}, #{refundtime,jdbcType=TIMESTAMP}, #{refundcardno,jdbcType=VARCHAR}, 
+      #{refundacctname,jdbcType=VARCHAR}, #{refundcardtype,jdbcType=SMALLINT}, #{refundtype,jdbcType=SMALLINT}, 
+      #{refundfailnum,jdbcType=INTEGER}, #{refundbatchid,jdbcType=VARCHAR}, #{channel,jdbcType=VARCHAR}, 
+      #{chargebackid,jdbcType=INTEGER}, #{daikoufee,jdbcType=DECIMAL}, #{daikoutype,jdbcType=VARCHAR}, 
+      #{refundfailreason,jdbcType=VARCHAR}, #{is_deleted,jdbcType=BIT}, #{gmt_create,jdbcType=TIMESTAMP}, 
+      #{gmt_modified,jdbcType=TIMESTAMP}, #{remark,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.lyao.bean.ExitTdDO">
+    update t_yd_exit_td
+    set txId = #{txId,jdbcType=VARCHAR},
+      mediaType = #{mediaType,jdbcType=TINYINT},
+      mediaNo = #{mediaNo,jdbcType=VARCHAR},
+      transPayType = #{transPayType,jdbcType=TINYINT},
+      tollProvinceId = #{tollProvinceId,jdbcType=VARCHAR},
+      issuerId = #{issuerId,jdbcType=VARCHAR},
+      obuSign = #{obuSign,jdbcType=TINYINT},
+      identification = #{identification,jdbcType=TINYINT},
+      terminalTransNo = #{terminalTransNo,jdbcType=VARCHAR},
+      cardId = #{cardId,jdbcType=VARCHAR},
+      etcCardType = #{etcCardType,jdbcType=TINYINT},
+      exTime = #{exTime,jdbcType=TIMESTAMP},
+      vehicleId = #{vehicleId,jdbcType=VARCHAR},
+      identifyVehicleId = #{identifyVehicleId,jdbcType=VARCHAR},
+      vehicleSignId = #{vehicleSignId,jdbcType=VARCHAR},
+      vehicleType = #{vehicleType,jdbcType=TINYINT},
+      vehicleClass = #{vehicleClass,jdbcType=TINYINT},
+      TAC = #{TAC,jdbcType=VARCHAR},
+      transFee = #{transFee,jdbcType=DECIMAL},
+      transType = #{transType,jdbcType=VARCHAR},
+      terminalNo = #{terminalNo,jdbcType=VARCHAR},
+      preBalance = #{preBalance,jdbcType=DECIMAL},
+      postBalance = #{postBalance,jdbcType=DECIMAL},
+      exWeight = #{exWeight,jdbcType=SMALLINT},
+      axleCount = #{axleCount,jdbcType=TINYINT},
+      description = #{description,jdbcType=VARCHAR},
+      specialType = #{specialType,jdbcType=VARCHAR},
+      enTollLaneId = #{enTollLaneId,jdbcType=VARCHAR},
+      enTollLaneHex = #{enTollLaneHex,jdbcType=VARCHAR},
+      enTime = #{enTime,jdbcType=TIMESTAMP},
+      enWeight = #{enWeight,jdbcType=SMALLINT},
+      enAxleCount = #{enAxleCount,jdbcType=TINYINT},
+      enTollStationName = #{enTollStationName,jdbcType=VARCHAR},
+      exTollStationName = #{exTollStationName,jdbcType=VARCHAR},
+      exTollLaneId = #{exTollLaneId,jdbcType=VARCHAR},
+      passId = #{passId,jdbcType=VARCHAR},
+      vehicleSign = #{vehicleSign,jdbcType=VARCHAR},
+      payFee = #{payFee,jdbcType=DECIMAL},
+      fee = #{fee,jdbcType=DECIMAL},
+      discountFee = #{discountFee,jdbcType=DECIMAL},
+      noCardCount = #{noCardCount,jdbcType=SMALLINT},
+      feeMileage = #{feeMileage,jdbcType=INTEGER},
+      shortFee = #{shortFee,jdbcType=DECIMAL},
+      shortFeeMileage = #{shortFeeMileage,jdbcType=INTEGER},
+      feeRate = #{feeRate,jdbcType=DECIMAL},
+      exitFeeType = #{exitFeeType,jdbcType=TINYINT},
+      spcRateVersion = #{spcRateVersion,jdbcType=VARCHAR},
+      cardTotalAmount = #{cardTotalAmount,jdbcType=DECIMAL},
+      obuTotalAmount = #{obuTotalAmount,jdbcType=DECIMAL},
+      obuTotalDisCountAmount = #{obuTotalDisCountAmount,jdbcType=DECIMAL},
+      obuProvinceFee = #{obuProvinceFee,jdbcType=DECIMAL},
+      totalCount = #{totalCount,jdbcType=SMALLINT},
+      provTransCount = #{provTransCount,jdbcType=SMALLINT},
+      provinceCount = #{provinceCount,jdbcType=SMALLINT},
+      discountType = #{discountType,jdbcType=TINYINT},
+      provinceDiscountFee = #{provinceDiscountFee,jdbcType=DECIMAL},
+      originFee = #{originFee,jdbcType=DECIMAL},
+      accountStatus = #{accountStatus,jdbcType=TINYINT},
+      accountTime = #{accountTime,jdbcType=TIMESTAMP},
+      result = #{result,jdbcType=TINYINT},
+      resultDetail = #{resultDetail,jdbcType=VARCHAR},
+      uploadStatus = #{uploadStatus,jdbcType=TINYINT},
+      refundstate = #{refundstate,jdbcType=SMALLINT},
+      refundtime = #{refundtime,jdbcType=TIMESTAMP},
+      refundcardno = #{refundcardno,jdbcType=VARCHAR},
+      refundacctname = #{refundacctname,jdbcType=VARCHAR},
+      refundcardtype = #{refundcardtype,jdbcType=SMALLINT},
+      refundtype = #{refundtype,jdbcType=SMALLINT},
+      refundfailnum = #{refundfailnum,jdbcType=INTEGER},
+      refundbatchid = #{refundbatchid,jdbcType=VARCHAR},
+      channel = #{channel,jdbcType=VARCHAR},
+      chargebackid = #{chargebackid,jdbcType=INTEGER},
+      daikoufee = #{daikoufee,jdbcType=DECIMAL},
+      daikoutype = #{daikoutype,jdbcType=VARCHAR},
+      refundfailreason = #{refundfailreason,jdbcType=VARCHAR},
+      is_deleted = #{is_deleted,jdbcType=BIT},
+      gmt_create = #{gmt_create,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmt_modified,jdbcType=TIMESTAMP},
+      remark = #{remark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, txId, mediaType, mediaNo, transPayType, tollProvinceId, issuerId, obuSign, 
+    identification, terminalTransNo, cardId, etcCardType, exTime, vehicleId, identifyVehicleId, 
+    vehicleSignId, vehicleType, vehicleClass, TAC, transFee, transType, terminalNo, preBalance, 
+    postBalance, exWeight, axleCount, description, specialType, enTollLaneId, enTollLaneHex, 
+    enTime, enWeight, enAxleCount, enTollStationName, exTollStationName, exTollLaneId, 
+    passId, vehicleSign, payFee, fee, discountFee, noCardCount, feeMileage, shortFee, 
+    shortFeeMileage, feeRate, exitFeeType, spcRateVersion, cardTotalAmount, obuTotalAmount, 
+    obuTotalDisCountAmount, obuProvinceFee, totalCount, provTransCount, provinceCount, 
+    discountType, provinceDiscountFee, originFee, accountStatus, accountTime, result, 
+    resultDetail, uploadStatus, refundstate, refundtime, refundcardno, refundacctname, 
+    refundcardtype, refundtype, refundfailnum, refundbatchid, channel, chargebackid, 
+    daikoufee, daikoutype, refundfailreason, is_deleted, gmt_create, gmt_modified, remark
+    from t_yd_exit_td
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, txId, mediaType, mediaNo, transPayType, tollProvinceId, issuerId, obuSign, 
+    identification, terminalTransNo, cardId, etcCardType, exTime, vehicleId, identifyVehicleId, 
+    vehicleSignId, vehicleType, vehicleClass, TAC, transFee, transType, terminalNo, preBalance, 
+    postBalance, exWeight, axleCount, description, specialType, enTollLaneId, enTollLaneHex, 
+    enTime, enWeight, enAxleCount, enTollStationName, exTollStationName, exTollLaneId, 
+    passId, vehicleSign, payFee, fee, discountFee, noCardCount, feeMileage, shortFee, 
+    shortFeeMileage, feeRate, exitFeeType, spcRateVersion, cardTotalAmount, obuTotalAmount, 
+    obuTotalDisCountAmount, obuProvinceFee, totalCount, provTransCount, provinceCount, 
+    discountType, provinceDiscountFee, originFee, accountStatus, accountTime, result, 
+    resultDetail, uploadStatus, refundstate, refundtime, refundcardno, refundacctname, 
+    refundcardtype, refundtype, refundfailnum, refundbatchid, channel, chargebackid, 
+    daikoufee, daikoutype, refundfailreason, is_deleted, gmt_create, gmt_modified, remark
+    from t_yd_exit_td
+  </select>
+  <resultMap id="BaseResultMap" type="com.lyao.bean.ExitTdDO">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="txId" jdbcType="VARCHAR" property="txId" />
+    <result column="mediaType" jdbcType="TINYINT" property="mediaType" />
+    <result column="mediaNo" jdbcType="VARCHAR" property="mediaNo" />
+    <result column="transPayType" jdbcType="TINYINT" property="transPayType" />
+    <result column="receiveTime" jdbcType="TIMESTAMP" property="receiveTime" />
+    <result column="tollProvinceId" jdbcType="VARCHAR" property="tollProvinceId" />
+    <result column="issuerId" jdbcType="VARCHAR" property="issuerId" />
+    <result column="obuSign" jdbcType="TINYINT" property="obuSign" />
+    <result column="terminalTransNo" jdbcType="VARCHAR" property="terminalTransNo" />
+    <result column="obuId" jdbcType="VARCHAR" property="obuId" />
+    <result column="cardId" jdbcType="VARCHAR" property="cardId" />
+    <result column="etcCardType" jdbcType="TINYINT" property="etcCardType" />
+    <result column="exTime" jdbcType="TIMESTAMP" property="exTime" />
+    <result column="vehicleId" jdbcType="VARCHAR" property="vehicleId" />
+    <result column="identifyVehicleId" jdbcType="VARCHAR" property="identifyVehicleId" />
+    <result column="vehicleSignId" jdbcType="VARCHAR" property="vehicleSignId" />
+    <result column="vehicleType" jdbcType="TINYINT" property="vehicleType" />
+    <result column="vehicleClass" jdbcType="TINYINT" property="vehicleClass" />
+    <result column="TAC" jdbcType="VARCHAR" property="TAC" />
+    <result column="transFee" jdbcType="DECIMAL" property="transFee" />
+    <result column="transType" jdbcType="VARCHAR" property="transType" />
+    <result column="terminalNo" jdbcType="VARCHAR" property="terminalNo" />
+    <result column="preBalance" jdbcType="DECIMAL" property="preBalance" />
+    <result column="postBalance" jdbcType="DECIMAL" property="postBalance" />
+    <result column="exWeight" jdbcType="SMALLINT" property="exWeight" />
+    <result column="axleCount" jdbcType="TINYINT" property="axleCount" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="specialType" jdbcType="VARCHAR" property="specialType" />
+    <result column="enTollLaneId" jdbcType="VARCHAR" property="enTollLaneId" />
+    <result column="enTollLaneHex" jdbcType="VARCHAR" property="enTollLaneHex" />
+    <result column="enTime" jdbcType="TIMESTAMP" property="enTime" />
+    <result column="enWeight" jdbcType="SMALLINT" property="enWeight" />
+    <result column="enAxleCount" jdbcType="TINYINT" property="enAxleCount" />
+    <result column="enTollStationName" jdbcType="VARCHAR" property="enTollStationName" />
+    <result column="exTollStationName" jdbcType="VARCHAR" property="exTollStationName" />
+    <result column="exTollLaneId" jdbcType="VARCHAR" property="exTollLaneId" />
+    <result column="passId" jdbcType="VARCHAR" property="passId" />
+    <result column="vehicleSign" jdbcType="VARCHAR" property="vehicleSign" />
+    <result column="payFee" jdbcType="DECIMAL" property="payFee" />
+    <result column="fee" jdbcType="DECIMAL" property="fee" />
+    <result column="discountFee" jdbcType="DECIMAL" property="discountFee" />
+    <result column="noCardCount" jdbcType="SMALLINT" property="noCardCount" />
+    <result column="feeMileage" jdbcType="INTEGER" property="feeMileage" />
+    <result column="shortFee" jdbcType="DECIMAL" property="shortFee" />
+    <result column="shortFeeMileage" jdbcType="INTEGER" property="shortFeeMileage" />
+    <result column="feeRate" jdbcType="DECIMAL" property="feeRate" />
+    <result column="exitFeeType" jdbcType="TINYINT" property="exitFeeType" />
+    <result column="spcRateVersion" jdbcType="VARCHAR" property="spcRateVersion" />
+    <result column="cardTotalAmount" jdbcType="DECIMAL" property="cardTotalAmount" />
+    <result column="obuTotalAmount" jdbcType="DECIMAL" property="obuTotalAmount" />
+    <result column="obuTotaldisCountAmount" jdbcType="DECIMAL" property="obuTotaldisCountAmount" />
+    <result column="obuProvinceFee" jdbcType="DECIMAL" property="obuProvinceFee" />
+    <result column="totalCount" jdbcType="SMALLINT" property="totalCount" />
+    <result column="provTransCount" jdbcType="SMALLINT" property="provTransCount" />
+    <result column="provinceCount" jdbcType="SMALLINT" property="provinceCount" />
+    <result column="discountType" jdbcType="TINYINT" property="discountType" />
+    <result column="provinceDiscountFee" jdbcType="DECIMAL" property="provinceDiscountFee" />
+    <result column="originFee" jdbcType="DECIMAL" property="originFee" />
+    <result column="processTime" jdbcType="TIMESTAMP" property="processTime" />
+    <result column="accountStatus" jdbcType="TINYINT" property="accountStatus" />
+    <result column="accountTime" jdbcType="TIMESTAMP" property="accountTime" />
+    <result column="result" jdbcType="TINYINT" property="result" />
+    <result column="resultDetail" jdbcType="VARCHAR" property="resultDetail" />
+    <result column="uploadStatus" jdbcType="TINYINT" property="uploadStatus" />
+    <result column="refundstate" jdbcType="SMALLINT" property="refundstate" />
+    <result column="refundtime" jdbcType="TIMESTAMP" property="refundtime" />
+    <result column="refundcardno" jdbcType="VARCHAR" property="refundcardno" />
+    <result column="refundacctname" jdbcType="VARCHAR" property="refundacctname" />
+    <result column="refundcardtype" jdbcType="SMALLINT" property="refundcardtype" />
+    <result column="refundtype" jdbcType="SMALLINT" property="refundtype" />
+    <result column="refundfailnum" jdbcType="INTEGER" property="refundfailnum" />
+    <result column="refundbatchid" jdbcType="VARCHAR" property="refundbatchid" />
+    <result column="channel" jdbcType="VARCHAR" property="channel" />
+    <result column="chargebackid" jdbcType="INTEGER" property="chargebackid" />
+    <result column="daikoufee" jdbcType="DECIMAL" property="daikoufee" />
+    <result column="daikoutype" jdbcType="VARCHAR" property="daikoutype" />
+    <result column="refundfailreason" jdbcType="VARCHAR" property="refundfailreason" />
+    <result column="is_deleted" jdbcType="BIT" property="is_deleted" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmt_create" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmt_modified" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_yd_exit_td
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lyao.bean.ExitTdDO">
+    insert into t_yd_exit_td (id, txId, mediaType, 
+      mediaNo, transPayType, receiveTime, 
+      tollProvinceId, issuerId, obuSign, 
+      terminalTransNo, obuId, cardId, 
+      etcCardType, exTime, vehicleId, 
+      identifyVehicleId, vehicleSignId, vehicleType, 
+      vehicleClass, TAC, transFee, 
+      transType, terminalNo, preBalance, 
+      postBalance, exWeight, axleCount, 
+      description, specialType, enTollLaneId, 
+      enTollLaneHex, enTime, enWeight, 
+      enAxleCount, enTollStationName, exTollStationName, 
+      exTollLaneId, passId, vehicleSign, 
+      payFee, fee, discountFee, 
+      noCardCount, feeMileage, shortFee, 
+      shortFeeMileage, feeRate, exitFeeType, 
+      spcRateVersion, cardTotalAmount, obuTotalAmount, 
+      obuTotaldisCountAmount, obuProvinceFee, 
+      totalCount, provTransCount, provinceCount, 
+      discountType, provinceDiscountFee, originFee, 
+      processTime, accountStatus, accountTime, 
+      result, resultDetail, uploadStatus, 
+      refundstate, refundtime, refundcardno, 
+      refundacctname, refundcardtype, refundtype, 
+      refundfailnum, refundbatchid, channel, 
+      chargebackid, daikoufee, daikoutype, 
+      refundfailreason, is_deleted, gmt_create, 
+      gmt_modified, remark)
+    values (#{id,jdbcType=BIGINT}, #{txId,jdbcType=VARCHAR}, #{mediaType,jdbcType=TINYINT}, 
+      #{mediaNo,jdbcType=VARCHAR}, #{transPayType,jdbcType=TINYINT}, #{receiveTime,jdbcType=TIMESTAMP}, 
+      #{tollProvinceId,jdbcType=VARCHAR}, #{issuerId,jdbcType=VARCHAR}, #{obuSign,jdbcType=TINYINT}, 
+      #{terminalTransNo,jdbcType=VARCHAR}, #{obuId,jdbcType=VARCHAR}, #{cardId,jdbcType=VARCHAR}, 
+      #{etcCardType,jdbcType=TINYINT}, #{exTime,jdbcType=TIMESTAMP}, #{vehicleId,jdbcType=VARCHAR}, 
+      #{identifyVehicleId,jdbcType=VARCHAR}, #{vehicleSignId,jdbcType=VARCHAR}, #{vehicleType,jdbcType=TINYINT}, 
+      #{vehicleClass,jdbcType=TINYINT}, #{TAC,jdbcType=VARCHAR}, #{transFee,jdbcType=DECIMAL}, 
+      #{transType,jdbcType=VARCHAR}, #{terminalNo,jdbcType=VARCHAR}, #{preBalance,jdbcType=DECIMAL}, 
+      #{postBalance,jdbcType=DECIMAL}, #{exWeight,jdbcType=SMALLINT}, #{axleCount,jdbcType=TINYINT}, 
+      #{description,jdbcType=VARCHAR}, #{specialType,jdbcType=VARCHAR}, #{enTollLaneId,jdbcType=VARCHAR}, 
+      #{enTollLaneHex,jdbcType=VARCHAR}, #{enTime,jdbcType=TIMESTAMP}, #{enWeight,jdbcType=SMALLINT}, 
+      #{enAxleCount,jdbcType=TINYINT}, #{enTollStationName,jdbcType=VARCHAR}, #{exTollStationName,jdbcType=VARCHAR}, 
+      #{exTollLaneId,jdbcType=VARCHAR}, #{passId,jdbcType=VARCHAR}, #{vehicleSign,jdbcType=VARCHAR}, 
+      #{payFee,jdbcType=DECIMAL}, #{fee,jdbcType=DECIMAL}, #{discountFee,jdbcType=DECIMAL}, 
+      #{noCardCount,jdbcType=SMALLINT}, #{feeMileage,jdbcType=INTEGER}, #{shortFee,jdbcType=DECIMAL}, 
+      #{shortFeeMileage,jdbcType=INTEGER}, #{feeRate,jdbcType=DECIMAL}, #{exitFeeType,jdbcType=TINYINT}, 
+      #{spcRateVersion,jdbcType=VARCHAR}, #{cardTotalAmount,jdbcType=DECIMAL}, #{obuTotalAmount,jdbcType=DECIMAL}, 
+      #{obuTotaldisCountAmount,jdbcType=DECIMAL}, #{obuProvinceFee,jdbcType=DECIMAL}, 
+      #{totalCount,jdbcType=SMALLINT}, #{provTransCount,jdbcType=SMALLINT}, #{provinceCount,jdbcType=SMALLINT}, 
+      #{discountType,jdbcType=TINYINT}, #{provinceDiscountFee,jdbcType=DECIMAL}, #{originFee,jdbcType=DECIMAL}, 
+      #{processTime,jdbcType=TIMESTAMP}, #{accountStatus,jdbcType=TINYINT}, #{accountTime,jdbcType=TIMESTAMP}, 
+      #{result,jdbcType=TINYINT}, #{resultDetail,jdbcType=VARCHAR}, #{uploadStatus,jdbcType=TINYINT}, 
+      #{refundstate,jdbcType=SMALLINT}, #{refundtime,jdbcType=TIMESTAMP}, #{refundcardno,jdbcType=VARCHAR}, 
+      #{refundacctname,jdbcType=VARCHAR}, #{refundcardtype,jdbcType=SMALLINT}, #{refundtype,jdbcType=SMALLINT}, 
+      #{refundfailnum,jdbcType=INTEGER}, #{refundbatchid,jdbcType=VARCHAR}, #{channel,jdbcType=VARCHAR}, 
+      #{chargebackid,jdbcType=INTEGER}, #{daikoufee,jdbcType=DECIMAL}, #{daikoutype,jdbcType=VARCHAR}, 
+      #{refundfailreason,jdbcType=VARCHAR}, #{is_deleted,jdbcType=BIT}, #{gmt_create,jdbcType=TIMESTAMP}, 
+      #{gmt_modified,jdbcType=TIMESTAMP}, #{remark,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.lyao.bean.ExitTdDO">
+    update t_yd_exit_td
+    set txId = #{txId,jdbcType=VARCHAR},
+      mediaType = #{mediaType,jdbcType=TINYINT},
+      mediaNo = #{mediaNo,jdbcType=VARCHAR},
+      transPayType = #{transPayType,jdbcType=TINYINT},
+      receiveTime = #{receiveTime,jdbcType=TIMESTAMP},
+      tollProvinceId = #{tollProvinceId,jdbcType=VARCHAR},
+      issuerId = #{issuerId,jdbcType=VARCHAR},
+      obuSign = #{obuSign,jdbcType=TINYINT},
+      terminalTransNo = #{terminalTransNo,jdbcType=VARCHAR},
+      obuId = #{obuId,jdbcType=VARCHAR},
+      cardId = #{cardId,jdbcType=VARCHAR},
+      etcCardType = #{etcCardType,jdbcType=TINYINT},
+      exTime = #{exTime,jdbcType=TIMESTAMP},
+      vehicleId = #{vehicleId,jdbcType=VARCHAR},
+      identifyVehicleId = #{identifyVehicleId,jdbcType=VARCHAR},
+      vehicleSignId = #{vehicleSignId,jdbcType=VARCHAR},
+      vehicleType = #{vehicleType,jdbcType=TINYINT},
+      vehicleClass = #{vehicleClass,jdbcType=TINYINT},
+      TAC = #{TAC,jdbcType=VARCHAR},
+      transFee = #{transFee,jdbcType=DECIMAL},
+      transType = #{transType,jdbcType=VARCHAR},
+      terminalNo = #{terminalNo,jdbcType=VARCHAR},
+      preBalance = #{preBalance,jdbcType=DECIMAL},
+      postBalance = #{postBalance,jdbcType=DECIMAL},
+      exWeight = #{exWeight,jdbcType=SMALLINT},
+      axleCount = #{axleCount,jdbcType=TINYINT},
+      description = #{description,jdbcType=VARCHAR},
+      specialType = #{specialType,jdbcType=VARCHAR},
+      enTollLaneId = #{enTollLaneId,jdbcType=VARCHAR},
+      enTollLaneHex = #{enTollLaneHex,jdbcType=VARCHAR},
+      enTime = #{enTime,jdbcType=TIMESTAMP},
+      enWeight = #{enWeight,jdbcType=SMALLINT},
+      enAxleCount = #{enAxleCount,jdbcType=TINYINT},
+      enTollStationName = #{enTollStationName,jdbcType=VARCHAR},
+      exTollStationName = #{exTollStationName,jdbcType=VARCHAR},
+      exTollLaneId = #{exTollLaneId,jdbcType=VARCHAR},
+      passId = #{passId,jdbcType=VARCHAR},
+      vehicleSign = #{vehicleSign,jdbcType=VARCHAR},
+      payFee = #{payFee,jdbcType=DECIMAL},
+      fee = #{fee,jdbcType=DECIMAL},
+      discountFee = #{discountFee,jdbcType=DECIMAL},
+      noCardCount = #{noCardCount,jdbcType=SMALLINT},
+      feeMileage = #{feeMileage,jdbcType=INTEGER},
+      shortFee = #{shortFee,jdbcType=DECIMAL},
+      shortFeeMileage = #{shortFeeMileage,jdbcType=INTEGER},
+      feeRate = #{feeRate,jdbcType=DECIMAL},
+      exitFeeType = #{exitFeeType,jdbcType=TINYINT},
+      spcRateVersion = #{spcRateVersion,jdbcType=VARCHAR},
+      cardTotalAmount = #{cardTotalAmount,jdbcType=DECIMAL},
+      obuTotalAmount = #{obuTotalAmount,jdbcType=DECIMAL},
+      obuTotaldisCountAmount = #{obuTotaldisCountAmount,jdbcType=DECIMAL},
+      obuProvinceFee = #{obuProvinceFee,jdbcType=DECIMAL},
+      totalCount = #{totalCount,jdbcType=SMALLINT},
+      provTransCount = #{provTransCount,jdbcType=SMALLINT},
+      provinceCount = #{provinceCount,jdbcType=SMALLINT},
+      discountType = #{discountType,jdbcType=TINYINT},
+      provinceDiscountFee = #{provinceDiscountFee,jdbcType=DECIMAL},
+      originFee = #{originFee,jdbcType=DECIMAL},
+      processTime = #{processTime,jdbcType=TIMESTAMP},
+      accountStatus = #{accountStatus,jdbcType=TINYINT},
+      accountTime = #{accountTime,jdbcType=TIMESTAMP},
+      result = #{result,jdbcType=TINYINT},
+      resultDetail = #{resultDetail,jdbcType=VARCHAR},
+      uploadStatus = #{uploadStatus,jdbcType=TINYINT},
+      refundstate = #{refundstate,jdbcType=SMALLINT},
+      refundtime = #{refundtime,jdbcType=TIMESTAMP},
+      refundcardno = #{refundcardno,jdbcType=VARCHAR},
+      refundacctname = #{refundacctname,jdbcType=VARCHAR},
+      refundcardtype = #{refundcardtype,jdbcType=SMALLINT},
+      refundtype = #{refundtype,jdbcType=SMALLINT},
+      refundfailnum = #{refundfailnum,jdbcType=INTEGER},
+      refundbatchid = #{refundbatchid,jdbcType=VARCHAR},
+      channel = #{channel,jdbcType=VARCHAR},
+      chargebackid = #{chargebackid,jdbcType=INTEGER},
+      daikoufee = #{daikoufee,jdbcType=DECIMAL},
+      daikoutype = #{daikoutype,jdbcType=VARCHAR},
+      refundfailreason = #{refundfailreason,jdbcType=VARCHAR},
+      is_deleted = #{is_deleted,jdbcType=BIT},
+      gmt_create = #{gmt_create,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmt_modified,jdbcType=TIMESTAMP},
+      remark = #{remark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, txId, mediaType, mediaNo, transPayType, receiveTime, tollProvinceId, issuerId, 
+    obuSign, terminalTransNo, obuId, cardId, etcCardType, exTime, vehicleId, identifyVehicleId, 
+    vehicleSignId, vehicleType, vehicleClass, TAC, transFee, transType, terminalNo, preBalance, 
+    postBalance, exWeight, axleCount, description, specialType, enTollLaneId, enTollLaneHex, 
+    enTime, enWeight, enAxleCount, enTollStationName, exTollStationName, exTollLaneId, 
+    passId, vehicleSign, payFee, fee, discountFee, noCardCount, feeMileage, shortFee, 
+    shortFeeMileage, feeRate, exitFeeType, spcRateVersion, cardTotalAmount, obuTotalAmount, 
+    obuTotaldisCountAmount, obuProvinceFee, totalCount, provTransCount, provinceCount, 
+    discountType, provinceDiscountFee, originFee, processTime, accountStatus, accountTime, 
+    result, resultDetail, uploadStatus, refundstate, refundtime, refundcardno, refundacctname, 
+    refundcardtype, refundtype, refundfailnum, refundbatchid, channel, chargebackid, 
+    daikoufee, daikoutype, refundfailreason, is_deleted, gmt_create, gmt_modified, remark
+    from t_yd_exit_td
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, txId, mediaType, mediaNo, transPayType, receiveTime, tollProvinceId, issuerId, 
+    obuSign, terminalTransNo, obuId, cardId, etcCardType, exTime, vehicleId, identifyVehicleId, 
+    vehicleSignId, vehicleType, vehicleClass, TAC, transFee, transType, terminalNo, preBalance, 
+    postBalance, exWeight, axleCount, description, specialType, enTollLaneId, enTollLaneHex, 
+    enTime, enWeight, enAxleCount, enTollStationName, exTollStationName, exTollLaneId, 
+    passId, vehicleSign, payFee, fee, discountFee, noCardCount, feeMileage, shortFee, 
+    shortFeeMileage, feeRate, exitFeeType, spcRateVersion, cardTotalAmount, obuTotalAmount, 
+    obuTotaldisCountAmount, obuProvinceFee, totalCount, provTransCount, provinceCount, 
+    discountType, provinceDiscountFee, originFee, processTime, accountStatus, accountTime, 
+    result, resultDetail, uploadStatus, refundstate, refundtime, refundcardno, refundacctname, 
+    refundcardtype, refundtype, refundfailnum, refundbatchid, channel, chargebackid, 
+    daikoufee, daikoutype, refundfailreason, is_deleted, gmt_create, gmt_modified, remark
+    from t_yd_exit_td
+  </select>
+</mapper>

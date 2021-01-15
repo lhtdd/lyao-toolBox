@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.CardDelayWasteDOMapper">
+  <resultMap id="BaseResultMap" type="com.lyao.bean.CardDelayWasteDO">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="posID" jdbcType="VARCHAR" property="posID" />
+    <result column="terminalID" jdbcType="VARCHAR" property="terminalID" />
+    <result column="genTime" jdbcType="TIMESTAMP" property="genTime" />
+    <result column="listNo" jdbcType="VARCHAR" property="listNo" />
+    <result column="enableDate" jdbcType="VARCHAR" property="enableDate" />
+    <result column="expireDate" jdbcType="VARCHAR" property="expireDate" />
+    <result column="cardType" jdbcType="SMALLINT" property="cardType" />
+    <result column="cardID" jdbcType="VARCHAR" property="cardID" />
+    <result column="random" jdbcType="VARCHAR" property="random" />
+    <result column="cardInfo" jdbcType="VARCHAR" property="cardInfo" />
+    <result column="flag" jdbcType="VARCHAR" property="flag" />
+    <result column="writeTime" jdbcType="TIMESTAMP" property="writeTime" />
+    <result column="writeFlag" jdbcType="VARCHAR" property="writeFlag" />
+    <result column="msgType" jdbcType="VARCHAR" property="msgType" />
+    <result column="is_deleted" jdbcType="BIT" property="is_deleted" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmt_create" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmt_modified" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_card_delaywaste
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.lyao.bean.CardDelayWasteDO">
+    insert into t_card_delaywaste (id, posID, terminalID, 
+      genTime, listNo, enableDate, 
+      expireDate, cardType, cardID, 
+      random, cardInfo, flag, 
+      writeTime, writeFlag, msgType, 
+      is_deleted, gmt_create, gmt_modified, 
+      remark)
+    values (#{id,jdbcType=INTEGER}, #{posID,jdbcType=VARCHAR}, #{terminalID,jdbcType=VARCHAR}, 
+      #{genTime,jdbcType=TIMESTAMP}, #{listNo,jdbcType=VARCHAR}, #{enableDate,jdbcType=VARCHAR}, 
+      #{expireDate,jdbcType=VARCHAR}, #{cardType,jdbcType=SMALLINT}, #{cardID,jdbcType=VARCHAR}, 
+      #{random,jdbcType=VARCHAR}, #{cardInfo,jdbcType=VARCHAR}, #{flag,jdbcType=VARCHAR}, 
+      #{writeTime,jdbcType=TIMESTAMP}, #{writeFlag,jdbcType=VARCHAR}, #{msgType,jdbcType=VARCHAR}, 
+      #{is_deleted,jdbcType=BIT}, #{gmt_create,jdbcType=TIMESTAMP}, #{gmt_modified,jdbcType=TIMESTAMP}, 
+      #{remark,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.lyao.bean.CardDelayWasteDO">
+    update t_card_delaywaste
+    set posID = #{posID,jdbcType=VARCHAR},
+      terminalID = #{terminalID,jdbcType=VARCHAR},
+      genTime = #{genTime,jdbcType=TIMESTAMP},
+      listNo = #{listNo,jdbcType=VARCHAR},
+      enableDate = #{enableDate,jdbcType=VARCHAR},
+      expireDate = #{expireDate,jdbcType=VARCHAR},
+      cardType = #{cardType,jdbcType=SMALLINT},
+      cardID = #{cardID,jdbcType=VARCHAR},
+      random = #{random,jdbcType=VARCHAR},
+      cardInfo = #{cardInfo,jdbcType=VARCHAR},
+      flag = #{flag,jdbcType=VARCHAR},
+      writeTime = #{writeTime,jdbcType=TIMESTAMP},
+      writeFlag = #{writeFlag,jdbcType=VARCHAR},
+      msgType = #{msgType,jdbcType=VARCHAR},
+      is_deleted = #{is_deleted,jdbcType=BIT},
+      gmt_create = #{gmt_create,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmt_modified,jdbcType=TIMESTAMP},
+      remark = #{remark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, posID, terminalID, genTime, listNo, enableDate, expireDate, cardType, 
+    cardID, random, cardInfo, flag, writeTime, writeFlag, msgType, is_deleted, gmt_create, 
+    gmt_modified, remark
+    from t_card_delaywaste
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, posID, terminalID, genTime, listNo, enableDate, expireDate, cardType, 
+    cardID, random, cardInfo, flag, writeTime, writeFlag, msgType, is_deleted, gmt_create, 
+    gmt_modified, remark
+    from t_card_delaywaste
+  </select>
+</mapper>
